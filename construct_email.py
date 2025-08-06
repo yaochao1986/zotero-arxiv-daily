@@ -123,9 +123,9 @@ def render_email(papers:list[ArxivPaper]):
         return framework.replace('__CONTENT__', get_empty_html())
     
     for p in tqdm(papers,desc='Rendering Email'):
-        rate = get_stars(p.score)
-        if rate < 3:
+        if p.score <= 6
           continue
+        rate = get_stars(p.score)
         authors = [a.name for a in p.authors[:5]]
         authors = ', '.join(authors)
         if len(p.authors) > 5:
